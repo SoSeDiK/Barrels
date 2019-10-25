@@ -1,5 +1,5 @@
 name: Barrels
-description: A better way of storing items.
+description: Улучшенный способ хранения предметов.
 author: John000708
 version: ${project.version}
 

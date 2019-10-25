@@ -28,7 +28,7 @@ public class DisplayItem {
         }
 
     	ItemStack stack = new CustomItem(new ItemStack(Material.BARRIER), 1);
-    	String nametag = ChatColor.translateAlternateColorCodes('&', "&cEmpty");
+    	String nametag = ChatColor.translateAlternateColorCodes('&', "&cПусто");
 
     	BlockMenu menu = BlockStorage.getInventory(b);
     	if (BlockStorage.getLocationInfo(b.getLocation(), "storedItems") != null) {

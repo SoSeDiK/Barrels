@@ -63,8 +63,8 @@ public class Barrel extends SlimefunItem {
                 });
 
                 if (BlockStorage.getLocationInfo(b.getLocation(), "storedItems") == null) {
-                    menu.replaceExistingItem(4, new CustomItem(new ItemStack(Material.BARRIER), "&7Empty"), false);
-                    menu.replaceExistingItem(22, new CustomItem(new ItemStack(Material.BARRIER), "&7Empty"), false);
+                    menu.replaceExistingItem(4, new CustomItem(new ItemStack(Material.BARRIER), "&7Пусто"), false);
+                    menu.replaceExistingItem(22, new CustomItem(new ItemStack(Material.BARRIER), "&7Пусто"), false);
                 }
 
                 if (Barrels.displayItem) {
@@ -347,8 +347,8 @@ public class Barrel extends SlimefunItem {
 
         if ((stored - output.getAmount()) <= 0) {
             BlockStorage.addBlockInfo(b, "storedItems", null);
-            inventory.replaceExistingItem(4, new CustomItem(new ItemStack(Material.BARRIER), "&7Empty"), false);
-            inventory.replaceExistingItem(22, new CustomItem(new ItemStack(Material.BARRIER), "&7Empty"), false);
+            inventory.replaceExistingItem(4, new CustomItem(new ItemStack(Material.BARRIER), "&7Пусто"), false);
+            inventory.replaceExistingItem(22, new CustomItem(new ItemStack(Material.BARRIER), "&7Пусто"), false);
             return;
         }
 
@@ -393,6 +393,7 @@ public class Barrel extends SlimefunItem {
             if (lore.get(i).equals(LORE_DATA)) {
                 lore.remove(i);
                 meta.setLore(lore);
+                meta.setLore(lore);
                 itemStack2.setItemMeta(meta);
                 break;
             }
@@ -405,7 +406,7 @@ public class Barrel extends SlimefunItem {
         int size = BlockStorage.getInventory(b).toInventory().getSize();
         Inventory inv = Bukkit.createInventory(null, size);
         for (int i = 0; i < size; i++) {
-            inv.setItem(i, new CustomItem(Material.COMMAND_BLOCK, "&4ALL YOUR PLACEHOLDERS ARE BELONG TO US"));
+            inv.setItem(i, new CustomItem(Material.COMMAND_BLOCK, "&4ВСЕ ВАШИ ПЛЕЙСХОЛДЕРЫ ПРИНАДЛЕЖАТ НАМ"));
         }
         for (int slot : getOutputSlots()) {
             inv.setItem(slot, BlockStorage.getInventory(b).getItemInSlot(slot));

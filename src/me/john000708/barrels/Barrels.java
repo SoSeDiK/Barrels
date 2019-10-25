@@ -79,27 +79,27 @@ public class Barrels extends JavaPlugin {
     }
     
     private void setup() {
-        Category barrelCat = new Category(new CustomItem(new ItemStack(Material.OAK_LOG), "&aBarrels", "", "&a> Click to open"), 2);
+        Category barrelCat = new Category(new CustomItem(new ItemStack(Material.OAK_LOG), "&aБочки для хранения предметов", "", "&a> Нажмите, чтобы открыть"), 2);
 
-        ItemStack SMALL_BARREL = new CustomItem(new ItemStack(Material.OAK_LOG), "&9Barrel &7- &eSmall", "", "&8\u21E8 &7Capacity: 64 Stacks");
-        ItemStack MEDIUM_BARREL = new CustomItem(Material.SPRUCE_LOG, "&9Barrel &7- &eMedium", "", "&8\u21E8 &7Capacity: 128 Stacks");
-        ItemStack BIG_BARREL = new CustomItem(Material.DARK_OAK_LOG, "&9Barrel &7- &eBig", "", "&8\u21E8 &7Capacity: 256 Stacks");
-        ItemStack LARGE_BARREL = new CustomItem(new ItemStack(Material.ACACIA_LOG), "&9Barrel &7- &eLarge", "", "&8\u21E8 &7Capacity: 512 Stacks");
-        ItemStack DSU = new CustomItem(new ItemStack(Material.DIAMOND_BLOCK), "&3Deep Storage Unit", "", "&4End-Game Storage Solution", "", "&8\u21E8 &7Capacity: 1048576 Stacks");
+        ItemStack SMALL_BARREL = new CustomItem(new ItemStack(Material.OAK_LOG), "&eМаленькая бочка", "", "&8\u21E8 &7Вместимость: 64 стака");
+        ItemStack MEDIUM_BARREL = new CustomItem(Material.SPRUCE_LOG, "&eСредняя бочка", "", "&8\u21E8 &7Вместимость: 128 стаков");
+        ItemStack BIG_BARREL = new CustomItem(Material.DARK_OAK_LOG, "&eБольшая бочка", "", "&8\u21E8 &7Вместимость: 256 стаков");
+        ItemStack LARGE_BARREL = new CustomItem(new ItemStack(Material.ACACIA_LOG), "&eОгромная бочка", "", "&8\u21E8 &7Вместимость: 512 стаков");
+        ItemStack DSU = new CustomItem(new ItemStack(Material.DIAMOND_BLOCK), "&3Глубокий блок хранения", "", "&4Хранилище предметов последней разработки", "", "&8\u21E8 &7Вместимость: 1048576 стаков");
 
         //Upgrades
-        final ItemStack EXPLOSION_MODULE = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Explosion Protection", "", "&fPrevents the barrel from", "&fgetting destroyed.");
-        final ItemStack BIOMETRIC_PROTECTION = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Biometric Protection", "", "&fPrevents other people", "&ffrom accessing your barrel.");
-        final ItemStack ID_CARD = new CustomItem(new ItemStack(Material.PAPER), "&fID Card", "", "&fRight click to bind.");
-        final ItemStack STRUCT_UPGRADE_1 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Structural Upgrade &7- &eI", "&bSmall &8\u21E8 &bMedium");
-        final ItemStack STRUCT_UPGRADE_2 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Structural Upgrade &7- &eII", "&bMedium &8\u21E8 &bBig");
-        final ItemStack STRUCT_UPGRADE_3 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Structural Upgrade &7- &eIII", "&bBig &8\u21E8 &bLarge");
+        final ItemStack EXPLOSION_MODULE = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Взрывоустойчивость", "", "&rПредотвращает уничтожение", "&rбочки при помощи взрывов");
+        final ItemStack BIOMETRIC_PROTECTION = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Биометрическая защита", "", "&rЗапрещает другим игрокам", "&rоткрывать бочку");
+        final ItemStack ID_CARD = new CustomItem(new ItemStack(Material.PAPER), "&rИдентификационная карта", "", "&eПравый клик&r, чтобы вписать свой ник", "&eПравый клик по бочке&r, чтобы дать", "&rигроку доступ к ней");
+        final ItemStack STRUCT_UPGRADE_1 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Структурная реконструкция &7– &eI", "&bМаленькая &8\u21E8 &bсредняя");
+        final ItemStack STRUCT_UPGRADE_2 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Структурная реконструкция &7– &eII", "&bСредняя &8\u21E8 &bбольшая");
+        final ItemStack STRUCT_UPGRADE_3 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Структурная реконструкция &7– &eIII", "&bБольшая &8\u21E8 &bогромная");
 
         new Barrel(barrelCat, SMALL_BARREL, "BARREL_SMALL", RecipeType.ENHANCED_CRAFTING_TABLE, new ItemStack[]{new ItemStack(Material.OAK_SLAB), plastic ? SlimefunItems.PLASTIC_SHEET : new ItemStack(Material.CAULDRON), new ItemStack(Material.OAK_SLAB), new ItemStack(Material.OAK_SLAB), new ItemStack(Material.CHEST), new ItemStack(Material.OAK_SLAB), new ItemStack(Material.OAK_SLAB), SlimefunItems.GILDED_IRON, new ItemStack(Material.OAK_SLAB)}, 4096) {
 
             @Override
             public String getInventoryTitle() {
-                return "&9Barrel &7- &eSmall";
+                return "&eМаленькая &9бочка";
             }
 
         }.register();
@@ -108,7 +108,7 @@ public class Barrels extends JavaPlugin {
 
             @Override
             public String getInventoryTitle() {
-                return "&9Barrel &7- &eMedium";
+                return "&eСредняя &9бочка";
             }
 
         }.register();
@@ -117,7 +117,7 @@ public class Barrels extends JavaPlugin {
 
             @Override
             public String getInventoryTitle() {
-                return "&9Barrel &7- &eBig";
+                return "&eБольшая &9бочка";
             }
 
         }.register();
@@ -126,7 +126,7 @@ public class Barrels extends JavaPlugin {
 
             @Override
             public String getInventoryTitle() {
-                return "&9Barrel &7- &eLarge";
+                return "&eОгромная &9бочка";
             }
 
         }.register();
@@ -135,7 +135,7 @@ public class Barrels extends JavaPlugin {
 
             @Override
             public String getInventoryTitle() {
-                return "&3Deep Storage Unit";
+                return "&3Глубокий блок хранения";
             }
 
         }.register();
@@ -159,7 +159,7 @@ public class Barrels extends JavaPlugin {
                             itemStack.setAmount(0);
                         }
                         else itemStack.setAmount(amount - 1);
-                        player.sendMessage(ChatColor.GREEN + "Module successfully applied!");
+                        player.sendMessage(ChatColor.GREEN + "Модуль успешно применён!");
                     }
                 }
                 return true;
@@ -186,7 +186,7 @@ public class Barrels extends JavaPlugin {
                         itemStack.setAmount(0);
                     }
                     else itemStack.setAmount(amount - 1);
-                    player.sendMessage(ChatColor.GREEN + "Module successfully applied!");
+                    player.sendMessage(ChatColor.GREEN + "Модуль успешно применён!");
                 }
                 return true;
             }
@@ -212,7 +212,7 @@ public class Barrels extends JavaPlugin {
                         itemStack.setAmount(0);
                     }
                     else itemStack.setAmount(amount - 1);
-                    player.sendMessage(ChatColor.GREEN + "Module successfully applied!");
+                    player.sendMessage(ChatColor.GREEN + "Модуль успешно применён!");
                 }
                 return true;
             }
@@ -238,7 +238,7 @@ public class Barrels extends JavaPlugin {
                         itemStack.setAmount(0);
                     }
                     else itemStack.setAmount(amount - 1);
-                    player.sendMessage(ChatColor.GREEN + "Module successfully applied!");
+                    player.sendMessage(ChatColor.GREEN + "Модуль успешно применён!");
                 }
                 return true;
             }
@@ -261,7 +261,7 @@ public class Barrels extends JavaPlugin {
                         itemStack.setAmount(0);
                     }
                     else itemStack.setAmount(amount - 1);
-                    player.sendMessage(ChatColor.GREEN + "Module successfully applied!");
+                    player.sendMessage(ChatColor.GREEN + "Модуль успешно применён!");
                 }
                 return true;
             }
@@ -283,14 +283,15 @@ public class Barrels extends JavaPlugin {
 
                 if (lore.get(0).equals("")) {
                     lore.set(0, ChatColor.translateAlternateColorCodes('&', "&0" + player.getUniqueId().toString()));
-                    lore.set(1, ChatColor.translateAlternateColorCodes('&', "&fBound to: " + player.getName()));
+                    lore.set(1, ChatColor.translateAlternateColorCodes('&', "&rBound to: " + player.getName()));
                     meta.setLore(lore);
                     itemStack.setItemMeta(meta);
-                    player.sendMessage(ChatColor.GREEN + "ID Card bound.");
+                    player.sendMessage(ChatColor.GREEN + "Идентификационная карта успешно привязана.");
                 } else if (clickedBlock != null && BlockStorage.hasBlockInfo(clickedBlock) && BlockStorage.checkID(clickedBlock).startsWith("BARREL_") && BlockStorage.getLocationInfo(clickedBlock.getLocation(), "whitelist") != null && BlockStorage.getLocationInfo(clickedBlock.getLocation(), "owner").equals(player.getUniqueId().toString())) {
                     String whitelistedPlayers = BlockStorage.getLocationInfo(clickedBlock.getLocation(), "whitelist");
-                    if (!whitelistedPlayers.contains(ChatColor.stripColor(lore.get(0)))) {
-                        BlockStorage.addBlockInfo(clickedBlock, "whitelist", whitelistedPlayers + ChatColor.stripColor(lore.get(0)) + ";");
+                    String name = ChatColor.stripColor(lore.get(0));
+                    if (!whitelistedPlayers.contains(name)) {
+                        BlockStorage.addBlockInfo(clickedBlock, "whitelist", whitelistedPlayers + name + ";");
                         // Fixes issue #6.
                         //player.getInventory().setItem(player.getInventory().getHeldItemSlot(), InvUtils.decreaseItem(itemStack, 1));
                         int amount = itemStack.getAmount();
@@ -298,10 +299,10 @@ public class Barrels extends JavaPlugin {
                             itemStack.setAmount(0);
                         }
                         else itemStack.setAmount(amount - 1);
-                        player.sendMessage(ChatColor.GREEN + "Player successfully whitelisted!");
+                        player.sendMessage(ChatColor.GREEN + "Игрок " + name + " добавлен в белый список!");
                     } 
                     else {
-                        player.sendMessage(ChatColor.RED + "The player is already whitelisted.");
+                        player.sendMessage(ChatColor.RED + "Этот игрок уже в белом списке.");
                     }
                 }
                 return true;
