@@ -200,7 +200,7 @@ public class Barrel extends SlimefunItem {
     }
 
     public String getInventoryTitle() {
-        return "&6Barrel";
+        return "&6Бочка";
     }
 
     public int getCapacity(Block b) {
