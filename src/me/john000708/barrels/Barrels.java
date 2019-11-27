@@ -279,11 +279,11 @@ public class Barrels extends JavaPlugin {
                 ItemMeta meta = itemStack.getItemMeta();
                 if (!meta.hasLore()) return false;
                 List<String> lore = itemStack.getItemMeta().getLore();
-                if (lore.size() != 2) return false;
+                if (lore.size() != 3) return false;
 
                 if (lore.get(0).equals("")) {
                     lore.set(0, ChatColor.translateAlternateColorCodes('&', "&0" + player.getUniqueId().toString()));
-                    lore.set(1, ChatColor.translateAlternateColorCodes('&', "&rBound to: " + player.getName()));
+                    lore.set(1, ChatColor.translateAlternateColorCodes('&', "&rПривязана к: " + player.getName()));
                     meta.setLore(lore);
                     itemStack.setItemMeta(meta);
                     player.sendMessage(ChatColor.GREEN + "Идентификационная карта успешно привязана.");
