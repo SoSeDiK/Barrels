@@ -90,7 +90,7 @@ public class Barrels extends JavaPlugin {
         //Upgrades
         final ItemStack EXPLOSION_MODULE = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Взрывоустойчивость", "", "&rПредотвращает уничтожение", "&rбочки при помощи взрывов");
         final ItemStack BIOMETRIC_PROTECTION = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Биометрическая защита", "", "&rЗапрещает другим игрокам", "&rоткрывать бочку");
-        final ItemStack ID_CARD = new CustomItem(new ItemStack(Material.PAPER), "&rИдентификационная карта", "", "&eПравый клик&r, чтобы вписать свой ник", "&eПравый клик по бочке&r, чтобы дать", "&rигроку доступ к ней");
+        final ItemStack ID_CARD = new CustomItem(new ItemStack(Material.PAPER), "&rИдентификационная карта", "", "&eПравый клик&r, чтобы вписать свой ник");
         final ItemStack STRUCT_UPGRADE_1 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Структурная реконструкция &7– &eI", "&bМаленькая &8\u21E8 &bсредняя");
         final ItemStack STRUCT_UPGRADE_2 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Структурная реконструкция &7– &eII", "&bСредняя &8\u21E8 &bбольшая");
         final ItemStack STRUCT_UPGRADE_3 = new CustomItem(new ItemStack(Material.ITEM_FRAME), "&9Структурная реконструкция &7– &eIII", "&bБольшая &8\u21E8 &bогромная");
@@ -279,7 +279,7 @@ public class Barrels extends JavaPlugin {
                 ItemMeta meta = itemStack.getItemMeta();
                 if (!meta.hasLore()) return false;
                 List<String> lore = itemStack.getItemMeta().getLore();
-                if (lore.size() != 3) return false;
+                if (lore.size() != 2) return false;
 
                 if (lore.get(0).equals("")) {
                     lore.set(0, ChatColor.translateAlternateColorCodes('&', "&0" + player.getUniqueId().toString()));
