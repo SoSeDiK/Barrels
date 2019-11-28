@@ -299,7 +299,7 @@ public class Barrels extends JavaPlugin {
                             itemStack.setAmount(0);
                         }
                         else itemStack.setAmount(amount - 1);
-                        player.sendMessage(ChatColor.GREEN + "Игрок " + name + " добавлен в белый список!");
+                        player.sendMessage(ChatColor.GREEN + "Игрок добавлен в белый список!");
                     } 
                     else {
                         player.sendMessage(ChatColor.RED + "Этот игрок уже в белом списке.");
